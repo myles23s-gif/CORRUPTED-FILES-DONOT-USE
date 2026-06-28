@@ -4,14 +4,14 @@
 [ext_resource type="Script" uid="uid://b45cd5qjgwm77" path="res://Scripts/player.gd" id="1_mkbva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mako7"]
-size = Vector2(32, 35)
+size = Vector2(24, 24)
 
 [node name="Player" type="Area2D" unique_id=343074308]
 script = ExtResource("1_mkbva")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724051773]
-scale = Vector2(0.25000006, 0.27343753)
+position = Vector2(9.536743e-07, -4.7683716e-07)
+scale = Vector2(0.18750001, 0.18750001)
 texture = ExtResource("1_m73dr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1814544759]

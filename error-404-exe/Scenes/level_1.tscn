@@ -5,4 +5,4 @@
 [node name="Level 1" type="Node2D" unique_id=878887162]
 
 [node name="character" parent="." unique_id=343074308 instance=ExtResource("1_vk57k")]
-position = Vector2(465, 171)
+position = Vector2(437, 247)
