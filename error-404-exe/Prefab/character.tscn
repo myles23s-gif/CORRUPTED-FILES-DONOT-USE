@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://cs5d5po13a7u7"]
 
-[ext_resource type="Texture2D" uid="uid://dqo6x4hppm3yp" path="res://icon.svg" id="1_m73dr"]
 [ext_resource type="Script" uid="uid://b45cd5qjgwm77" path="res://Scripts/player.gd" id="1_mkbva"]
+[ext_resource type="Texture2D" uid="uid://rexqiwwf186j" path="res://Temp Sprites/temp-character.png" id="2_mkbva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mako7"]
 size = Vector2(24, 24)
 
-[node name="Player" type="Area2D" unique_id=343074308]
+[node name="Player" type="CharacterBody2D" unique_id=1002642745]
 script = ExtResource("1_mkbva")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1724051773]
-position = Vector2(9.536743e-07, -4.7683716e-07)
-scale = Vector2(0.18750001, 0.18750001)
-texture = ExtResource("1_m73dr")
+position = Vector2(0, 1.1920929e-06)
+scale = Vector2(0.37499997, 0.375)
+texture = ExtResource("2_mkbva")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1814544759]
 shape = SubResource("RectangleShape2D_mako7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
+zoom = Vector2(2, 2)
