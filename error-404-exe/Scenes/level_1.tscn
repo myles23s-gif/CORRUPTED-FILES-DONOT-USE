@@ -112,6 +112,22 @@ position = Vector2(581, 327)
 position = Vector2(266, 149)
 player = NodePath("../character")
 
+[node name="Enemy5" parent="." unique_id=1651513409 node_paths=PackedStringArray("player") instance=ExtResource("4_7p6j4")]
+position = Vector2(547, 548)
+player = NodePath("../character")
+
+[node name="Enemy4" parent="." unique_id=2138995920 node_paths=PackedStringArray("player") instance=ExtResource("4_7p6j4")]
+position = Vector2(981, 377)
+player = NodePath("../character")
+
+[node name="Enemy3" parent="." unique_id=1711349366 node_paths=PackedStringArray("player") instance=ExtResource("4_7p6j4")]
+position = Vector2(217, 410)
+player = NodePath("../character")
+
+[node name="Enemy2" parent="." unique_id=1641119354 node_paths=PackedStringArray("player") instance=ExtResource("4_7p6j4")]
+position = Vector2(864, 122)
+player = NodePath("../character")
+
 [node name="Game UI" type="Control" parent="." unique_id=213933204]
 layout_mode = 3
 anchors_preset = 0
