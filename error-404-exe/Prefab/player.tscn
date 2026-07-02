@@ -19,4 +19,4 @@ texture = ExtResource("2_mkbva")
 shape = SubResource("CapsuleShape2D_ryixy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(3, 3)
