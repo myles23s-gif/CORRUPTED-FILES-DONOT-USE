@@ -12,18 +12,7 @@ func respawn():
 	velocity = Vector2.ZERO 
 
 
-func _physics_process(delta: float) -> void:
-	
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	var direction = Input.get_vector("player_left","player_right","player_up","player_down")
-	velocity = direction * SPEED
-	move_and_slide()
-	for i in get_slide_collision_count():
-		var collision = get_slide_collision(i)
-		var collider = collision.get_collider()
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Enemies"):
+		respawn()
 		
-		# Check if the object we hit is the specific CharacterBody2D
-		if collider is CharacterBody2D and collider.name == "enemy":
-			respawn()
