@@ -24,14 +24,17 @@ func respawn():
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Enemies"):
+	print("Hitbox collided with: ", area.name) # Debug print
+	if area.is_in_group("Enemies") or area.get_parent().is_in_group("Enemies"):
 		respawn()
 		
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	var direction = Input.get_vector("player_left","player_right","player_up","player_down")
+		
+	var direction = Input.get_vector("player_left", "player_right", "player_up", "player_down")
 
+	# Dash logic
 	if dash_time == false:
 		if Input.is_action_just_pressed("player_dash") and not is_dashing:
 			if direction == Vector2.ZERO:
@@ -39,10 +42,12 @@ func _physics_process(delta: float) -> void:
 			else:
 				dash_direction = direction.normalized()
 				
-				is_dashing = true
-				dash_time = true
-				dash_timer.start()
-				dash_cooldown.start()
+			is_dashing = true
+			dash_time = true
+			dash_timer.start()
+			dash_cooldown.start()
+
+	# Movement
 	if is_dashing:
 		velocity = dash_direction * DASHSPEED
 	else:
@@ -50,8 +55,23 @@ func _physics_process(delta: float) -> void:
 			velocity = direction * SPEED
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+
+	# 1. Move the player
 	move_and_slide()
 
+	# 2. Check for collisions directly! No Area2D or signals required.
+	check_enemy_collisions()
+
+
+func check_enemy_collisions():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		# If the object we bumped into is in the "Enemies" group
+		if collider and collider.is_in_group("Enemies"):
+			respawn()
+			break
 
 
 func _on_dash_timer_timeout() -> void:
