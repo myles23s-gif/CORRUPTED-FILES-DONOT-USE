@@ -28,13 +28,15 @@ shape = SubResource("CapsuleShape2D_ryixy")
 shape = SubResource("CapsuleShape2D_mako7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
-zoom = Vector2(3, 3)
+zoom = Vector2(0.25, 0.25)
 
 [node name="DashTimer" type="Timer" parent="." unique_id=1015700200]
-wait_time = 0.15
+wait_time = 0.25
 one_shot = true
 
 [node name="DashCooldownTimer" type="Timer" parent="." unique_id=773645482]
+one_shot = true
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]
