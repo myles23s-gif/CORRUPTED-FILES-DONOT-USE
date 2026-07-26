@@ -28,7 +28,6 @@ shape = SubResource("CapsuleShape2D_ryixy")
 shape = SubResource("CapsuleShape2D_mako7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
-zoom = Vector2(0.25, 0.25)
 
 [node name="DashTimer" type="Timer" parent="." unique_id=1015700200]
 wait_time = 0.25
