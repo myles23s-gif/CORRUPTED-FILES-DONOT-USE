@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://clk2evse2x7ic" path="res://Temp Sprites/enemy_placeholder.png" id="2_axcr2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mako7"]
-radius = 27.018513
+radius = 33.13608
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50k3d"]
-radius = 27.0
+radius = 33.13608
 
 [node name="Enemy" type="CharacterBody2D" unique_id=372405923]
 script = ExtResource("1_axcr2")
@@ -20,7 +20,7 @@ shape = SubResource("CircleShape2D_mako7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1729443703]
 position = Vector2(0, -4.7683716e-07)
-scale = Vector2(0.124000005, 0.124000005)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_axcr2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1685359387]
