@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 200.0
-const DASHSPEED = 600.0
+const SPEED = 350.0
+const DASHSPEED = 700.0
 
 # seeing if you are dashing
 var dash_time: bool = false
