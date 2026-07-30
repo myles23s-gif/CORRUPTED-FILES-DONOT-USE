@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 350.0
-const DASHSPEED = 700.0
+const SPEED = 200.0
+const DASHSPEED = 400.0
 
 # seeing if you are dashing
 var dash_time: bool = false
@@ -23,7 +23,10 @@ func respawn():
 	velocity = Vector2.ZERO 
 
 
-
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	print("Hitbox collided with: ", area.name) # Debug print
+	if area.is_in_group("Enemies") or area.get_parent().is_in_group("Enemies"):
+		respawn()
 		
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -79,8 +82,3 @@ func _on_dash_timer_timeout() -> void:
 
 func _on_dash_cooldown_timer_timeout() -> void:
 	dash_time = false
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Enemies"):
-		respawn()
