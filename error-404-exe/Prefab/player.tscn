@@ -7,10 +7,6 @@
 radius = 8.0
 height = 26.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mako7"]
-radius = 9.0
-height = 28.0
-
 [node name="Player" type="CharacterBody2D" unique_id=1002642745]
 script = ExtResource("1_mkbva")
 
@@ -19,24 +15,8 @@ position = Vector2(0.031252146, 0.031252146)
 scale = Vector2(0.04787499, 0.047874995)
 texture = ExtResource("2_mkbva")
 
-[node name="Physics" type="CollisionShape2D" parent="." unique_id=1814544759]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1814544759]
 shape = SubResource("CapsuleShape2D_ryixy")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=826410421]
-collision_layer = 3
-collision_mask = 3
-
-[node name="Hitbox" type="CollisionShape2D" parent="Area2D" unique_id=1028507353]
-shape = SubResource("CapsuleShape2D_mako7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=361214871]
 zoom = Vector2(3, 3)
-
-[node name="DashTimer" type="Timer" parent="." unique_id=1015700200]
-wait_time = 0.15
-one_shot = true
-
-[node name="DashCooldownTimer" type="Timer" parent="." unique_id=773645482]
-
-[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="DashCooldownTimer" to="." method="_on_dash_cooldown_timer_timeout"]
